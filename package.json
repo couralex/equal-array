@@ -1,0 +1,28 @@
+{
+  "name": "equal-array",
+  "version": "0.0.0",
+  "description": "Make the === operator compares arrays by values instead of references.",
+  "main": "./lib/equal-array.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/couralex/equal-array.git"
+  },
+  "keywords": [
+    "array",
+    "equal",
+    "map",
+    "set",
+    "key",
+    "es6",
+    "tuple"
+  ],
+  "author": "couralex <couralex@courpron.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/couralex/equal-array/issues"
+  },
+  "homepage": "https://github.com/couralex/equal-array#readme"
+}
