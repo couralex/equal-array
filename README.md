@@ -8,7 +8,7 @@ equal-array handles comparisons of arrays by values instead of references. It do
 
 ## Purpose
 
-It is mainly useful with an es6 Map or Set, where arrays, used as keys, are compared by references. For example :
+It is mainly useful with an es6 Map or Set, because arrays, used as keys, are compared by references. For example :
 ```js
 const map = new Map();
 map.set([1, 2 ,3], 'a');
@@ -27,6 +27,7 @@ npm install equal-array
 
 ```js
 import EqualArray from 'equal-array';
+// ES5: var EqualArray = require('equal-array').default;
 
 const eq = new EqualArray();
 // eq is a function
@@ -57,7 +58,7 @@ If `returnArray` is `true`, the `eq` function returns a cloned array, otherwise 
 #### `conversion`
 *accepted values: `true` (default), `false`, or a callback*
 
-Apply a conversion to the array elements before making the comparison. This is important if the array contains objects because they are compared by references, so :
+Apply a conversion to the array elements before making the comparison. This is important if the array contains objects because, by default, they are compared by references, so :
 ```js
 new Date(1995, 10) !== new Date(1995, 10)
 ```
