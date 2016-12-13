@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/couralex/equal-array/badge.svg?branch=master)](https://coveralls.io/github/couralex/equal-array?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-equal-array handles comparisons of arrays by values instead of references. It does not compare arrays by itself but let the === operator compare them by values.
+equal-array lets the strict equality operator `===` compare arrays by values instead of references. Comparison can be either shallow or deeper.
 
 ## Purpose
 
@@ -45,7 +45,7 @@ map.has(eq([1, 2, 3])); // returns true
 
 ```js
 const eq = new EqualArray({
- returnArray: false
+ returnArray: false,
  conversion: true
 })
 ```
@@ -58,17 +58,14 @@ If `returnArray` is `true`, the `eq` function returns a cloned array, otherwise 
 #### `conversion`
 *accepted values: `true` (default), `false`, or a callback*
 
-Apply a conversion to the array elements before making the comparison. This is important if the array contains objects because, by default, they are compared by references, so :
-```js
-new Date(1995, 10) !== new Date(1995, 10)
-```
+Apply a conversion to the array elements in order to make the comparison. This is important if the array contains objects.
 
-if `conversion` is `false` then :
+If `conversion` is `false` then :
 ```js
 eq([1, 2, new Date(1995, 10)]) !== eq([1, 2, new Date(1995, 10)])
 ```
 
-if `conversion` is `true` then :
+If `conversion` is `true` then :
 ```js
 eq([1, 2, new Date(1995, 10)]) === eq([1, 2, new Date(1995, 10)])
 ```
@@ -81,6 +78,6 @@ const obj2 = {dummy: 1};
 const obj3 = {dummy: 99};
 const callback = element => element.dummy;
 const eq = new EqualArray({conversion: callback});
-eq([obj1]) === eq([obj2])); // true
-eq([obj1]) === eq([obj3])); // false
+eq([obj1]) === eq([obj2]); // true
+eq([obj1]) === eq([obj3]); // false
 ```
