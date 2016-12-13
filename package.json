@@ -10,7 +10,7 @@
     "commit": "git-cz",
     "commita": "git add . && git status -s && git-cz",
     "lint": "eslint src test",
-    "cover": "$(npm bin)/isparta cover _mocha -- \"test/{unit,integration}/**/*.test.js\"",
+    "cover": "babel-node $(npm bin)/isparta cover _mocha -- \"test/{unit,integration}/**/*.test.js\"",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "test": "mocha \"test/{unit,integration}/**/*.test.js\""
   },
