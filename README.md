@@ -4,16 +4,16 @@
 [![Coverage Status](https://coveralls.io/repos/github/couralex/equal-array/badge.svg?branch=master)](https://coveralls.io/github/couralex/equal-array?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-equal-array compares arrays by values instead of references.
+equal-array handles comparisons of arrays by values instead of references. It does not compare arrays by itself but let the === operator compare them by values.
 
-## Why ?
+## Purpose
 
 It is mainly useful with an es6 Map or Set, where arrays, used as keys, are compared by references. For example :
 ```js
 const map = new Map();
 map.set([1, 2 ,3], 'a');
 map.set([1, 2 ,3], 'b'); // the map will consider [1, 2 ,3] as a new key
-map.size(); // returns 2 - with equal-array: returns 1
+map.size; // returns 2 - with equal-array: returns 1
 map.has([1, 2, 3]); // returns false - with equal-array: returns true
 ```
 
@@ -36,7 +36,7 @@ console.log(eq([1, 2, 3]) === eq([1, 2, 3])); //returns true
 const map = new Map();
 map.set(eq([1, 2 ,3]), 'a');
 map.set(eq([1, 2 ,3]), 'b');
-map.size(); // returns 1
+map.size; // returns 1
 map.has(eq([1, 2, 3])); // returns true
 ```
 
