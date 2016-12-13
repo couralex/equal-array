@@ -1,6 +1,6 @@
 {
   "name": "equal-array",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Make the === operator compares arrays by values instead of references.",
   "main": "./lib/equal-array.js",
   "scripts": {
@@ -38,7 +38,7 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "dependencies" : {
+  "dependencies": {
     "babel-plugin-transform-runtime": "^6.15.0"
   },
   "devDependencies": {
