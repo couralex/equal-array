@@ -51,10 +51,12 @@ const eq = new EqualArray({
 
 #### `returnArray`
 *accepted values: `false` (default) or `true`*
+
 If `returnArray` is `true`, the `eq` function returns a cloned array, otherwise a unique integer. The default is `false` to maximize performances.
 
 #### `conversion`
 *accepted values: `true` (default), `false`, or a callback*
+
 Apply a conversion to the array elements before making the comparison. This is important if the array contains objects because they are compared by references, so :
 ```js
 new Date(1995, 10) !== new Date(1995, 10)
