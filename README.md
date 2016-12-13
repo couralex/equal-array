@@ -31,7 +31,7 @@ import EqualArray from 'equal-array';
 const eq = new EqualArray();
 // eq is a function
 
-console.log(eq([1, 2, 3]) === eq([1, 2, 3])); //returns true
+eq([1, 2, 3]) === eq([1, 2, 3]); //returns true
 
 const map = new Map();
 map.set(eq([1, 2 ,3]), 'a');
