@@ -1,6 +1,6 @@
 {
   "name": "equal-array",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Make the === operator compares arrays by values instead of references.",
   "main": "./lib/equal-array.js",
   "scripts": {
